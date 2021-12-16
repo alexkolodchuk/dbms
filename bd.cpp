@@ -8,8 +8,70 @@ using namespace std;
 /* Initialiation start */
 
 typedef struct TColumnData {
-    ;
+    string name;
+    int len;
 } ColumnData;
+
+class Table
+{
+	private:
+		int rows = 0, columns = 0;
+		char*** t;
+		TColumnData data[];
+
+	public:
+		Table(int r, int c, TColumnData d[])
+		{
+			// Initialization of the three-dimentional array of symbols.
+			// "t" is an array of rows, every row is an array of cells, every cell is an array of symbols.
+			// Length of each cell is contained within TColumnData[] type.
+			// In every column needs to be specified it's length and name.
+			rows = r;
+			columns = c;
+			t = (char***)malloc(rows*sizeof(char**));
+			
+			for (int row=0; row<rows; row++) {
+				char** k = (char**)malloc(columns*sizeof(char*));
+				t[row] = k;
+				
+				for (int cell; cell<columns; cell++) {
+					char* k = (char*)malloc(d[cell].len*sizeof(char));
+					t[row][cell] = k;
+				}
+			}
+		}
+		
+		void SetColumns(int c)
+		{
+			// In progress...
+		}
+		
+		int GetColumns()
+		{
+			return columns;
+		}
+		
+		void SetRows(int r)
+		{
+			// In progress...
+		}
+		
+		int GetRows()
+		{
+			return rows;
+		}
+		
+		void SetColData(int n, ColumnData d)
+		{
+			data[n] = d;
+			// In progress...
+		}
+		
+		ColumnData GetColData(int c)
+		{
+			return data[c];
+		}
+};
 
 /* Initialization end */
 
@@ -44,6 +106,23 @@ int main()
         
         if (i=="n" || i=="N" || i=="т" || i=="Т") {
             /* DB initialization and working with it */
+            
+            int sizeC, sizeR;
+            lang? cout << "Enter initial quantity of columns: " : cout << "Введите начальное кол-во столбцов: ";
+            cin >> sizeC;
+            ColumnData cols[sizeC];
+            for (int i=0; i<sizeC; i++) {
+				lang? cout << "\nEnter the name of the column №" << i << ": " : cout << "Введите название столбца №" << i+1 << ": ";
+				cin >> cols[i].name;
+				getline(cin, cols[i].name);
+				lang? cout << "\nEnter the length of the column №" << i << ": " : cout << "Введите длину столбца №" << i+1 << ": ";
+				cin >> cols[i].len;
+			}
+			lang? cout << "Enter initial quantity of rows: " : cout << "Введите начальное кол-во строк: ";
+            cin >> sizeR;
+            
+            Table t(sizeR, sizeC, cols);
+            
             
         } else if (i=="o" || i=="O" || i=="щ" || i=="Щ") {
             /* DB opening and work with it */
