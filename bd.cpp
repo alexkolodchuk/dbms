@@ -1,4 +1,4 @@
-/* DBMS Project © Alex Kolodchuk, 2021
+/* DBMS Project ¬© Alex Kolodchuk, 2021
  *
  * Please do ensure that your compiler supports C++'11 or GNU++'11 standarts
  *
@@ -238,36 +238,36 @@ int main()
     while (true) {
 
 		// Main menu
-        lang? cout << "Welcome to MephDBMS.\n"                 : cout << "ƒÓ·Ó ÔÓÊ‡ÎÓ‚‡Ú¸ ‚ ÃËÙ—”¡ƒ.\n";
-        lang? cout << "To create new spreadsheet, press N.\n"  : cout << "◊ÚÓ·˚ ÒÓÁ‰‡Ú¸ ÌÓ‚Û˛ ·‡ÁÛ, Ì‡ÊÏËÚÂ N.\n";
-        lang? cout << "To open an already existing, press O.\n": cout << "◊ÚÓ·˚ ÓÚÍ˚Ú¸ ÒÛ˘ÂÒÚ‚Û˛˘Û˛, Ì‡ÊÏËÚÂ O.\n";
-        lang? cout << "To open preferences, press P.\n"        : cout << "◊ÚÓ·˚ ÓÚÍ˚Ú¸ ÓÍÌÓ Ì‡ÒÚÓÂÍ, Ì‡ÊÏËÚÂ P.\n";
-        lang? cout << "To close MephDBMS, press Q.\n"          : cout << "◊ÚÓ·˚ ‚˚ÈÚË ËÁ ÃËÙ—”¡ƒ, Ì‡ÊÏËÚÂ Q.\n";
+        lang? cout << "Welcome to MephDBMS.\n"                 : cout << "–î–æ–±—Ä–æ –ø–æ–∂–∞–ª–æ–≤–∞—Ç—å –≤ –ú–∏—Ñ–°–£–ë–î.\n";
+        lang? cout << "To create new spreadsheet, press N.\n"  : cout << "–ß—Ç–æ–±—ã —Å–æ–∑–¥–∞—Ç—å –Ω–æ–≤—É—é –±–∞–∑—É, –Ω–∞–∂–º–∏—Ç–µ N.\n";
+        lang? cout << "To open an already existing, press O.\n": cout << "–ß—Ç–æ–±—ã –æ—Ç–∫—Ä—ã—Ç—å —Å—É—â–µ—Å—Ç–≤—É—é—â—É—é, –Ω–∞–∂–º–∏—Ç–µ O.\n";
+        lang? cout << "To open preferences, press P.\n"        : cout << "–ß—Ç–æ–±—ã –æ—Ç–∫—Ä—ã—Ç—å –æ–∫–Ω–æ –Ω–∞—Å—Ç—Ä–æ–µ–∫, –Ω–∞–∂–º–∏—Ç–µ P.\n";
+        lang? cout << "To close MephDBMS, press Q.\n"          : cout << "–ß—Ç–æ–±—ã –≤—ã–π—Ç–∏ –∏–∑ –ú–∏—Ñ–°–£–ë–î, –Ω–∞–∂–º–∏—Ç–µ Q.\n";
 
 		// Symbol reading
         cin >> i;
         if (system("cls")==32512) system("clear");
 
-        if (i=="n" || i=="N" || i=="Ú" || i=="“") {
+        if (i=="n" || i=="N" || i=="—Ç" || i=="–¢") {
             /* DB initialization and working with it */
 
             int sizeC, sizeR;
-            lang? cout << "Enter initial quantity of columns: " : cout << "¬‚Â‰ËÚÂ Ì‡˜‡Î¸ÌÓÂ ÍÓÎ-‚Ó ÒÚÓÎ·ˆÓ‚: ";
+            lang? cout << "Enter initial quantity of columns: " : cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞—á–∞–ª—å–Ω–æ–µ –∫–æ–ª-–≤–æ —Å—Ç–æ–ª–±—Ü–æ–≤: ";
             cin >> sizeC;
             ColumnData* cols = (ColumnData*)malloc(0);
             for (int i=0; i<sizeC; i++) {
             	string name; int len;
-				lang? cout << "\nEnter the name of the column π" << i << ": " : cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ ÒÚÓÎ·ˆ‡ π" << i+1 << ": ";
+				lang? cout << "\nEnter the name of the column ¬π" << i << ": " : cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ —Å—Ç–æ–ª–±—Ü–∞ ‚Ññ" << i+1 << ": ";
 				cin >> name;
 				getline(cin, name);
-				lang? cout << "\nEnter the length of the column π" << i << ": " : cout << "¬‚Â‰ËÚÂ ‰ÎËÌÛ ÒÚÓÎ·ˆ‡ π" << i+1 << ": ";
+				lang? cout << "\nEnter the length of the column ¬π" << i << ": " : cout << "–í–≤–µ–¥–∏—Ç–µ –¥–ª–∏–Ω—É —Å—Ç–æ–ª–±—Ü–∞ ‚Ññ" << i+1 << ": ";
 				cin >> len;
 
                 realloc(cols, (i+1)*sizeof(ColumnData));
                 ColumnData k(len, name);
 				cols[i] = k;
 			}
-			lang? cout << "Enter initial quantity of rows: " : cout << "¬‚Â‰ËÚÂ Ì‡˜‡Î¸ÌÓÂ ÍÓÎ-‚Ó ÒÚÓÍ: ";
+			lang? cout << "Enter initial quantity of rows: " : cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞—á–∞–ª—å–Ω–æ–µ –∫–æ–ª-–≤–æ —Å—Ç—Ä–æ–∫: ";
             cin >> sizeR;
 
             Table t(sizeR, sizeC, cols);
@@ -278,26 +278,26 @@ int main()
             //t.AddColumn(1, f);
 
 
-        } else if (i=="o" || i=="O" || i=="˘" || i=="Ÿ") {
+        } else if (i=="o" || i=="O" || i=="—â" || i=="–©") {
             /* DB opening and work with it */
             // In progress...
         }
-        else if (i=="p" || i=="P" || i=="Á" || i=="«") {
+        else if (i=="p" || i=="P" || i=="–∑" || i=="–ó") {
             /* Settings menu */
 
 			while (true) {
-				lang? cout << "Preferences:\n"          : cout << "Õ‡ÒÚÓÈÍË:\n";
-				lang? cout << "[1] Language: English\n" : cout << "[1] ﬂÁ˚Í: –ÛÒÒÍËÈ\n";
-				lang? cout << "[2] Keybindings...\n"    : cout << "[2] ”Ô‡‚ÎÂÌËÂ ÍÎ‡‚Ë¯‡ÏË...\n";
-				lang? cout << "[3] Reset all binds\n"   : cout << "[3] —·Óc ÛÔ‡‚ÎÂÌËˇ\n";
-				lang? cout << "[4] Quit to main menu\n" : cout << "[4] ¬˚ıÓ‰ ‚ „Î‡‚ÌÓÂ ÏÂÌ˛\n";
-				cin >> i;
+				lang? cout << "Preferences:\n"          : cout << "–ù–∞—Å—Ç—Ä–æ–π–∫–∏:\n";
+				lang? cout << "[1] Language: English\n" : cout << "[1] –Ø–∑—ã–∫: –†—É—Å—Å–∫–∏–π\n";
+				lang? cout << "[2] Keybindings...\n"    : cout << "[2] –£–ø—Ä–∞–≤–ª–µ–Ω–∏–µ –∫–ª–∞–≤–∏—à–∞–º–∏...\n";
+				lang? cout << "[3] Reset all binds\n"   : cout << "[3] –°–±—Ä–æc —É–ø—Ä–∞–≤–ª–µ–Ω–∏—è\n";
+				lang? cout << "[4] Quit to main menu\n" : cout << "[4] –í—ã—Ö–æ–¥ –≤ –≥–ª–∞–≤–Ω–æ–µ –º–µ–Ω—é\n";
+                                cin >> i;
 				if (system("cls")==32512) system("clear");
 
 				if (i=="1") {
-					lang? cout << "Change program language to Russian?\n[y/n] " : cout << "»ÁÏÂÌËÚ¸ ˇÁ˚Í ÔÓ„‡ÏÏ˚ Ì‡ ¿Ì„ÎËÈÒÍËÈ?\n[y/n] ";
+					lang? cout << "Change program language to Russian?\n[y/n] " : cout << "√à√ß√¨√•√≠√®√≤√º √ø√ß√ª√™ √Ø√∞√Æ√£√∞√†√¨√¨√ª √≠√† √Ä√≠√£√´√®√©√±√™√®√©?\n[y/n] ";
 					cin >> i;
-					if (i=="y" || i=="Y" || i=="Ì" || i=="Õ") {lang = !lang; continue;}
+					if (i=="y" || i=="Y" || i=="–Ω" || i=="–ù") {lang = !lang; continue;}
 				} else if (i=="2") {
 					// In progress..
 
@@ -308,7 +308,7 @@ int main()
 					break;
 			}
         }
-        else if (i=="q" || i=="Q" || i=="È" || i=="…") return 0;
+        else if (i=="q" || i=="Q" || i=="–π" || i=="–ô") return 0;
     }
 
     return 0;
